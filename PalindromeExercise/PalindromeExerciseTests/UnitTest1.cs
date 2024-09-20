@@ -6,12 +6,17 @@ namespace PalindromeExerciseTests
 {
     public class UnitTest1
     {
-        [Fact]
+        [Theory]
+        [InlineData("radar")]
+        [InlineData("madam")]
+        [InlineData("level")]
+        [InlineData("rotor")]
+        [InlineData("noon")]
 
-        public void Test1()
+        public void Test1(string word)
         {
             var palindromeTest = new WordSmith();
-            bool result = palindromeTest.IsAPalindrome("radar");
+            bool result = palindromeTest.IsAPalindrome(word);
             Assert.True(result);
         }
     }
